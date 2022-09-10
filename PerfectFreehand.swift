@@ -53,7 +53,7 @@ extension PerfectFreehand {
             } else {
                 point = prev.point.lrp(pts[i], t: t)
                 if !stroke.simulatePressure {
-                    point = Point(x: point.x, y: point.y, p: pts[i].p);
+                    point = PerfectFreehand.Point(x: point.x, y: point.y, p: pts[i].p);
                 }
             }
             
@@ -71,7 +71,7 @@ extension PerfectFreehand {
                 hasReachedMinimumLength = true
             }
             
-            prev = StrokePoint(
+            prev = PerfectFreehand.StrokePoint(
                     point: point,
                     vector: prev.point.sub(point).uni(),
                     distance: distance,
